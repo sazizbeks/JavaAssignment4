@@ -11,6 +11,8 @@ import java.io.IOException;
 public class ReaderServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        String firstName = request.getParameter("fname");
+        String lastName = request.getParameter("lname");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
