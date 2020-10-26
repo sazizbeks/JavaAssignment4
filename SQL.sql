@@ -22,3 +22,9 @@ VALUES
 (1, 'Azizbek', 'Seitmagambetov'),
 (2, 'Ibragim', 'Kuanyshbay'),
 (3, 'Ayan', 'Sultan');
+
+INSERT INTO books(ISBN, NAME, AUTHOR, COUNT_OF_COPY)
+VALUES
+('978-5-367-00490-8', 'A Brief History of Time Paperback', 'Stephen Hawking', 10),
+('0-670-81302-8','It','Stephen King', 20),
+('978-5496025416','Grokaem algoritmy. Illyustrirovannoe posobie dlya programmistov i lyubopytstvuyuschih', 'Aditya Bhargava', 50);
