@@ -1,19 +1,27 @@
 package kz.edu.astanait.controllers;
 
 import kz.edu.astanait.DB;
+import kz.edu.astanait.controllers.interfaces.IBookController;
 import kz.edu.astanait.models.Book;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 
-public class BookController {
+public class BookController implements IBookController {
 
-    public void updateBook(Book book) {
+    @Override
+    public void add(Book entity) {
+
+    }
+
+    @Override
+    public void update(Book entity) {
         StringBuilder sb = new StringBuilder("UPDATE BOOKS SET ");
 
-        if (book.getName() != null) sb.append("NAME=?,");
-        if (book.getAuthor() != null) sb.append("AUTHOR=?,");
-        if (book.getCount_of_copy() != null) sb.append("COUNT_OF_COPY=?,");
+        if (entity.getName() != null) sb.append("NAME=?,");
+        if (entity.getAuthor() != null) sb.append("AUTHOR=?,");
+        if (entity.getCount_of_copy() != null) sb.append("COUNT_OF_COPY=?,");
 
         sb.deleteCharAt(sb.length() - 1); // Deletes last coma (,)
         sb.append(" WHERE ISBN=?");
@@ -22,10 +30,10 @@ public class BookController {
             PreparedStatement preparedStatement = DB.getConnection().prepareStatement(sb.toString());
 
             int i = 1;
-            if (book.getName() != null) preparedStatement.setString(i++, book.getName());
-            if (book.getAuthor() != null) preparedStatement.setString(i++, book.getAuthor());
-            if (book.getCount_of_copy() != null) preparedStatement.setInt(i++, book.getCount_of_copy());
-            preparedStatement.setString(i, book.getISBN());
+            if (entity.getName() != null) preparedStatement.setString(i++, entity.getName());
+            if (entity.getAuthor() != null) preparedStatement.setString(i++, entity.getAuthor());
+            if (entity.getCount_of_copy() != null) preparedStatement.setInt(i++, entity.getCount_of_copy());
+            preparedStatement.setString(i, entity.getISBN());
 
             preparedStatement.execute();
         } catch (SQLException throwable) {
@@ -33,4 +41,13 @@ public class BookController {
         }
     }
 
+    @Override
+    public void delete(Integer id) {
+
+    }
+
+    @Override
+    public List<Book> getAll() {
+        return null;
+    }
 }
