@@ -14,7 +14,16 @@ import java.util.List;
 public class ReaderController implements IReaderController {
     @Override
     public void add(Reader entity) {
-
+        String sql = "INSERT INTO READERS(IIN, FNAME, LNAME) VALUES (?,?,?)";
+        try {
+            PreparedStatement ps = DB.getConnection().prepareStatement(sql);
+            ps.setString(1, entity.getIin());
+            ps.setString(2, entity.getFirstName());
+            ps.setString(3, entity.getLastName());
+            ps.execute();
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
+        }
     }
 
     @Override
@@ -42,8 +51,15 @@ public class ReaderController implements IReaderController {
     }
 
     @Override
-    public void delete(Integer id) {
-
+    public void delete(String identifier) {
+        String sql = "DELETE FROM readers WHERE IIN=?";
+        try {
+            PreparedStatement ps = DB.getConnection().prepareStatement(sql);
+            ps.setString(1, identifier);
+            ps.execute();
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
+        }
     }
 
     @Override
@@ -67,7 +83,6 @@ public class ReaderController implements IReaderController {
 
     @Override
     public Reader getByIin(String iin) {
-        Reader reader = null;
         try {
             PreparedStatement ps = DB.getConnection().prepareStatement("SELECT * FROM READERS WHERE IIN=?");
             ps.setString(1, iin);
