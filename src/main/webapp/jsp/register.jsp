@@ -11,7 +11,7 @@
     </style>
 </head>
 <%@include file="../js/bootstrap.js"%>
-<script><%@include file="../js/UserChecker.js"%></script>
+<script><%@include file="../js/IINChecker.js"%></script>
 <body>
 <!-- main -->
 <div class="main-w3layouts wrapper">
