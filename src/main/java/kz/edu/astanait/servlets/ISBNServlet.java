@@ -26,14 +26,12 @@ public class ISBNServlet extends HttpServlet {
         ResultSet rs = null;
 
         String ISBN = request.getParameter("ISBN");
-        System.out.println(ISBN);
 
         try{
             pst = conn.prepareStatement("SELECT * FROM books WHERE ISBN = ?");
             pst.setString(1,ISBN);
             rs = pst.executeQuery();
 
-            System.out.println(conn);
             if(rs.next()){
                 response.setContentType("text/html");
                 String json = new Gson().toJson("Not available");
@@ -46,7 +44,6 @@ public class ISBNServlet extends HttpServlet {
             }
         } catch (SQLException throwable) {
             throwable.printStackTrace();
-            System.out.println(conn);
         }
     }
 
