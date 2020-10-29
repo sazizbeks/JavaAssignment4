@@ -9,18 +9,31 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <style>
+        <%@include file="../css/index.css"%>
+    </style>
 </head>
+<%@include file="../js/bootstrap.js"%>
+<script><%@include file="../js/ISBNChecker.js"%></script>
 <body>
-<form action="addBook" method="post">
-    <input type="text" name="ISBN" placeholder="ISBN" required>
-    <br>
-    <input type="text" name="name" placeholder="Name" required>
-    <br>
-    <input type="text" name="author" placeholder="Author" required>
-    <br>
-    <input type="number" name="count_of_copy" placeholder="Count of copy" required>
-    <br>
-    <input type="submit" value="submit">
-</form>
+<!-- main -->
+<div class="main-w3layouts wrapper">
+    <h1>Astana IT University Library</h1>
+    <div class="main-agileinfo">
+        <div class="agileits-top">
+            <form action="" method="post">
+                <input class="text" type="text" id="ISBN" placeholder="ISBN" required><br>
+                <input class="text" type="text" name="Name" placeholder="Name" required><br>
+                <input class="text" type="text" name="Author" placeholder="Author" required><br>
+                <input class="text" type="text" name="CountOfCopy" placeholder="Count of copy" required><br>
+                <span id="badResult" class="text-danger"></span>
+                <span class="text-success" id="goodResult"></span>
+                <input type="submit" value="Submit" id="submit">
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>
