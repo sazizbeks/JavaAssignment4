@@ -51,11 +51,11 @@ public class ReaderController implements IReaderController {
     }
 
     @Override
-    public void delete(String identifier) {
+    public void delete(Reader entity) {
         String sql = "DELETE FROM readers WHERE IIN=?";
         try {
             PreparedStatement ps = DB.getConnection().prepareStatement(sql);
-            ps.setString(1, identifier);
+            ps.setString(1, entity.getIin());
             ps.execute();
         } catch (SQLException throwable) {
             throwable.printStackTrace();

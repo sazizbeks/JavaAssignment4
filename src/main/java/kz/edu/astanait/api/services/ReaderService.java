@@ -2,10 +2,7 @@ package kz.edu.astanait.api.services;
 
 import kz.edu.astanait.api.controllers.ReaderController;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -30,4 +27,8 @@ public class ReaderService {
                 .ok(readerController.getByIin(iin))
                 .build();
     }
+
+    @POST
+    @Path("/delete/{iin}")
+
 }
