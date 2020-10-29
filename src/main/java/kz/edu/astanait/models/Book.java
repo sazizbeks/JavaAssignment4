@@ -44,4 +44,14 @@ public class Book {
     public void setCount_of_copy(Integer count_of_copy) {
         this.count_of_copy = count_of_copy;
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "ISBN='" + ISBN + '\'' +
+                ", name='" + name + '\'' +
+                ", author='" + author + '\'' +
+                ", count_of_copy=" + count_of_copy +
+                '}';
+    }
 }
