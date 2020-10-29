@@ -5,7 +5,10 @@ import kz.edu.astanait.controllers.interfaces.IReaderController;
 import kz.edu.astanait.models.Reader;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ReaderController implements IReaderController {
@@ -30,7 +33,7 @@ public class ReaderController implements IReaderController {
             int i = 1;
             if (entity.getFirstName() != null) preparedStatement.setString(i++, entity.getFirstName());
             if (entity.getLastName() != null) preparedStatement.setString(i++, entity.getLastName());
-            preparedStatement.setInt(i, entity.getId());
+            preparedStatement.setString(i, entity.getIin());
 
             preparedStatement.execute();
         } catch (SQLException throwable) {
@@ -45,6 +48,20 @@ public class ReaderController implements IReaderController {
 
     @Override
     public List<Reader> getAll() {
-        return null;
+        List<Reader> readers = new ArrayList<>();
+        try {
+            Statement stmt = DB.getConnection().createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM READERS");
+            while (rs.next()){
+                readers.add(new Reader(
+                        rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3)
+                ));
+            }
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
+        }
+        return readers;
     }
 }

@@ -1,22 +1,22 @@
 package kz.edu.astanait.models;
 
 public class Reader {
-    private int id;
+    private String iin;
     private String firstName;
     private String lastName;
 
-    public Reader(int id, String firstName, String lastName) {
-        this.id = id;
+    public Reader(String iin, String firstName, String lastName) {
+        this.iin = iin;
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public int getId() {
-        return id;
+    public String getIin() {
+        return iin;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIin(String iin) {
+        this.iin = iin;
     }
 
     public String getFirstName() {
