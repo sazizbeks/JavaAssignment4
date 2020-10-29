@@ -14,7 +14,19 @@ import java.util.List;
 public class ReaderController implements IReaderController {
     @Override
     public void add(Reader entity) {
+        String sql = "INSERT INTO readers(iin,fname,lname)";
 
+        try {
+            PreparedStatement stmt = DB.getConnection().prepareStatement(sql);
+
+            stmt.setString(1,entity.getIin());
+            stmt.setString(2,entity.getFirstName());
+            stmt.setString(3,entity.getLastName());
+
+            stmt.execute();
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
+        }
     }
 
     @Override
@@ -64,4 +76,5 @@ public class ReaderController implements IReaderController {
         }
         return readers;
     }
+
 }
