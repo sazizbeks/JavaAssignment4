@@ -1,7 +1,7 @@
-package kz.edu.astanait.controllers;
+package kz.edu.astanait.api.controllers;
 
 import kz.edu.astanait.DB;
-import kz.edu.astanait.controllers.interfaces.IReaderController;
+import kz.edu.astanait.api.controllers.interfaces.IReaderController;
 import kz.edu.astanait.models.Reader;
 
 import java.sql.PreparedStatement;

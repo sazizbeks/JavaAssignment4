@@ -1,4 +1,4 @@
-package kz.edu.astanait.controllers.interfaces;
+package kz.edu.astanait.api.controllers.interfaces;
 
 import kz.edu.astanait.models.Reader;
 
