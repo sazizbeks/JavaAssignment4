@@ -34,7 +34,7 @@ public class ReaderController implements IReaderController {
         if (entity.getLastName() != null) sb.append("LNAME=?,");
 
         sb.deleteCharAt(sb.length() - 1); // Deletes last coma (,)
-        sb.append(" WHERE ID=?");
+        sb.append(" WHERE IIN=?");
 
         try {
             PreparedStatement preparedStatement = DB.getConnection().prepareStatement(sb.toString());
