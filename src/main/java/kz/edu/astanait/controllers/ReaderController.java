@@ -64,4 +64,24 @@ public class ReaderController implements IReaderController {
         }
         return readers;
     }
+
+    @Override
+    public Reader getByIin(String iin) {
+        Reader reader = null;
+        try {
+            PreparedStatement ps = DB.getConnection().prepareStatement("SELECT * FROM READERS WHERE IIN=?");
+            ps.setString(1, iin);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                return new Reader(
+                        rs.getString("IIN"),
+                        rs.getString("FNAME"),
+                        rs.getString("LNAME")
+                );
+            }
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
+        }
+        return null;
+    }
 }

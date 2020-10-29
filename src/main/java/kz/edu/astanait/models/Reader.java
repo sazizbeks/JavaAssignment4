@@ -5,6 +5,9 @@ public class Reader {
     private String firstName;
     private String lastName;
 
+    public Reader() {
+    }
+
     public Reader(String iin, String firstName, String lastName) {
         this.iin = iin;
         this.firstName = firstName;

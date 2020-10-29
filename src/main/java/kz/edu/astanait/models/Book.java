@@ -6,6 +6,9 @@ public class Book {
     private String author;
     private Integer count_of_copy;
 
+    public Book() {
+    }
+
     public Book(String ISBN, String name, String author, int count_of_copy) {
         this.ISBN = ISBN;
         this.name = name;
