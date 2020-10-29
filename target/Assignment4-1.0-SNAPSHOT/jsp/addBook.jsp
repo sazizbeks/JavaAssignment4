@@ -23,7 +23,7 @@
     <h1>Astana IT University Library</h1>
     <div class="main-agileinfo">
         <div class="agileits-top">
-            <form action="<c:url value="/addBook"/>" method="post">
+            <form action="" method="post">
                 <input class="text" type="text" id="ISBN" placeholder="ISBN" required><br>
                 <input class="text" type="text" name="Name" placeholder="Name" required><br>
                 <input class="text" type="text" name="Author" placeholder="Author" required><br>
