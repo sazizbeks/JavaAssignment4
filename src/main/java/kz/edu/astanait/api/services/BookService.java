@@ -7,6 +7,12 @@ import javax.ws.rs.Produces;
 @Path("/book")
 public class BookService {
 
+    /*
+        TODO
+         delete getClichedMessage() method
+         add other methods like in ReaderService
+     */
+
     @GET
     @Produces("text/plain")
     public String getClichedMessage() {

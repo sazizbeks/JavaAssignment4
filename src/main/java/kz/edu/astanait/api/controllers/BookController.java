@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class BookController implements IBookController {
+    // TODO implement add, delete, getAll
 
     @Override
     public void add(Book entity) {
