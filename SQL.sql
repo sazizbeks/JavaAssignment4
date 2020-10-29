@@ -21,9 +21,9 @@ CREATE TABLE READERS_BOOKS(
 
 INSERT INTO READERS(IIN, FNAME, LNAME)
 VALUES
-(010425550130, 'Azizbek', 'Seitmagambetov'),
-(020727550967, 'Ibragim', 'Kuanyshbay'),
-(020429550471, 'Ayan', 'Sultan');
+('010425550130', 'Azizbek', 'Seitmagambetov'),
+('020727550967', 'Ibragim', 'Kuanyshbay'),
+('020429550471', 'Ayan', 'Sultan');
 
 INSERT INTO books(ISBN, NAME, AUTHOR, COUNT_OF_COPY)
 VALUES
