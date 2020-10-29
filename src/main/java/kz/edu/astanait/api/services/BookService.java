@@ -13,6 +13,8 @@ public class BookService {
          add other methods like in ReaderService
      */
 
+
+
     @GET
     @Produces("text/plain")
     public String getClichedMessage() {
