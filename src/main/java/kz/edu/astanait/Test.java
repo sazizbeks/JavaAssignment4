@@ -1,32 +1,22 @@
 package kz.edu.astanait;
 
-//import com.sun.jersey.api.client.Client;
-//import com.sun.jersey.api.client.ClientResponse;
-//import com.sun.jersey.api.client.WebResource;
-//import com.sun.jersey.api.client.config.ClientConfig;
-//import com.sun.jersey.api.client.config.DefaultClientConfig;
-import kz.edu.astanait.controllers.ReaderController;
+import kz.edu.astanait.models.Reader;
 
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 
 public class Test {
     public static void main(String[] args) {
-//        ReaderController rd = new ReaderController();
-//        rd.getAll().forEach(System.out::println);
 
-//        String REST_URI = "http://localhost:8080/Assignment4_war/api";
-//
-//        ClientConfig config = new DefaultClientConfig();
-//        Client client = Client.create(config);
-//        WebResource service = client.resource(REST_URI);
-//
-//        WebResource readerService = service.path("/reader");
-//
-//        System.out.println();
-//
-//        String s = readerService.path("/getAll").accept(MediaType.APPLICATION_JSON_TYPE).get(ClientResponse.class).toString();
-//        System.out.println(s);
-//
-//        readerService.getURI();
+        // Don't delete this block of code
+        String REST_URI = "http://localhost:8080/Assignment4_war/api/reader/";
+        WebTarget target = ClientBuilder.newBuilder().build().target(REST_URI);
+        WebTarget resource = target.path("getByIin/010425550130");
+        System.out.println(resource.request(MediaType.APPLICATION_JSON).get(Reader.class));
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//        ReaderController rd  = new ReaderController();
+//        System.out.println("Reader is "+rd.getByIin("010425550130"));
     }
 }

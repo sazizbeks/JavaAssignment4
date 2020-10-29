@@ -1,7 +1,7 @@
-package kz.edu.astanait.controllers;
+package kz.edu.astanait.api.controllers;
 
 import kz.edu.astanait.DB;
-import kz.edu.astanait.controllers.interfaces.IBookController;
+import kz.edu.astanait.api.controllers.interfaces.IBookController;
 import kz.edu.astanait.models.Book;
 
 import java.sql.PreparedStatement;
@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class BookController implements IBookController {
+    // TODO implement add, delete, getAll
 
     @Override
     public void add(Book entity) {
@@ -42,7 +43,7 @@ public class BookController implements IBookController {
     }
 
     @Override
-    public void delete(Integer id) {
+    public void delete(Book entity) {
 
     }
 

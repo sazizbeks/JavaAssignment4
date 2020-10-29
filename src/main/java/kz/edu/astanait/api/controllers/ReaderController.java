@@ -1,7 +1,7 @@
-package kz.edu.astanait.controllers;
+package kz.edu.astanait.api.controllers;
 
 import kz.edu.astanait.DB;
-import kz.edu.astanait.controllers.interfaces.IReaderController;
+import kz.edu.astanait.api.controllers.interfaces.IReaderController;
 import kz.edu.astanait.models.Reader;
 
 import java.sql.PreparedStatement;
@@ -14,6 +14,16 @@ import java.util.List;
 public class ReaderController implements IReaderController {
     @Override
     public void add(Reader entity) {
+        String sql = "INSERT INTO READERS(IIN, FNAME, LNAME) VALUES (?,?,?)";
+        try {
+            PreparedStatement ps = DB.getConnection().prepareStatement(sql);
+            ps.setString(1, entity.getIin());
+            ps.setString(2, entity.getFirstName());
+            ps.setString(3, entity.getLastName());
+            ps.execute();
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
+        }
     }
 
     @Override
@@ -24,7 +34,7 @@ public class ReaderController implements IReaderController {
         if (entity.getLastName() != null) sb.append("LNAME=?,");
 
         sb.deleteCharAt(sb.length() - 1); // Deletes last coma (,)
-        sb.append(" WHERE ID=?");
+        sb.append(" WHERE IIN=?");
 
         try {
             PreparedStatement preparedStatement = DB.getConnection().prepareStatement(sb.toString());
@@ -41,8 +51,15 @@ public class ReaderController implements IReaderController {
     }
 
     @Override
-    public void delete(Integer id) {
-
+    public void delete(Reader entity) {
+        String sql = "DELETE FROM readers WHERE IIN=?";
+        try {
+            PreparedStatement ps = DB.getConnection().prepareStatement(sql);
+            ps.setString(1, entity.getIin());
+            ps.execute();
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
+        }
     }
 
     @Override
@@ -66,7 +83,6 @@ public class ReaderController implements IReaderController {
 
     @Override
     public Reader getByIin(String iin) {
-        Reader reader = null;
         try {
             PreparedStatement ps = DB.getConnection().prepareStatement("SELECT * FROM READERS WHERE IIN=?");
             ps.setString(1, iin);
