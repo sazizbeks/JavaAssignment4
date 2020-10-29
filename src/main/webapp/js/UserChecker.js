@@ -5,7 +5,7 @@ $(document).ready(function () {
         let IIN = document.getElementById("IIN").value;
 
         if (IIN.length!=12 ) {
-            document.getElementById("badResult").innerHTML = "Please, enter IIN number";
+            document.getElementById("badResult").innerHTML = "Incorrect IIN! Write again!";
             document.getElementById("goodResult").innerHTML = "";
             document.getElementById("submit").disabled = true;
             return;
