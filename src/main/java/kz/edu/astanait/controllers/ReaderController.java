@@ -14,7 +14,6 @@ import java.util.List;
 public class ReaderController implements IReaderController {
     @Override
     public void add(Reader entity) {
-
     }
 
     @Override

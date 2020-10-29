@@ -1,4 +1,13 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="s" uri="http://java.sun.com/jsp/jstl/sql"%>
+
+<s:setDataSource var = "snapshot" driver = "com.mysql.jdbc.Driver"
+                   url = "jdbc:mysql://localhost:3306/assignment_week_8?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
+                   user = "root"  password = ""/>
+
+<s:query dataSource = "${snapshot}" var = "result">
+    SELECT * FROM books;
+</s:query>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -23,8 +32,9 @@
     <div class="grid">
         <nav class="navigation">
             <ul class="navigation__list navigation__list--inline">
-                <li class="navigation__item"><a href="#" class="is-active">Home</a></li
-                    <%--piwi syuda perehody AYAN!!!--%>
+                <li class="navigation__item"><a href="jsp/<c:url value="index.jsp"/>" class="is-active">Home</a></li>
+                <li class="navigation__item"><a href="jsp/<c:url value="register.jsp"/>" class="is-active">Register</a></li>
+                <li class="navigation__item"><a href="jsp/<c:url value="addBook.jsp"/>" class="is-active">Add book</a></li>
             </ul>
         </nav>
     </div>
