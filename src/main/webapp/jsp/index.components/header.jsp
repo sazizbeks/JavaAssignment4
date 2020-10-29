@@ -32,9 +32,9 @@
     <div class="grid">
         <nav class="navigation">
             <ul class="navigation__list navigation__list--inline">
-                <li class="navigation__item"><a href="jsp/<c:url value="index.jsp"/>" class="is-active">Home</a></li>
-                <li class="navigation__item"><a href="jsp/<c:url value="register.jsp"/>" class="is-active">Register</a></li>
-                <li class="navigation__item"><a href="jsp/<c:url value="addBook.jsp"/>" class="is-active">Add book</a></li>
+                <li class="navigation__item"><a href="<c:url value="index.jsp"/>" class="is-active">Home</a></li>
+                <li class="navigation__item"><a href="<c:url value="jsp/register.jsp"/>" class="is-active">Register</a></li>
+                <li class="navigation__item"><a href="<c:url value="jsp/addBook.jsp"/>" class="is-active">Add book</a></li>
             </ul>
         </nav>
     </div>

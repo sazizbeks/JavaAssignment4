@@ -1,4 +1,4 @@
-<%@include file="./index.components/header.jsp" %>
+<%@include file="jsp/index.components/header.jsp" %>
 
 <main class="main">
 
@@ -79,4 +79,4 @@
 
 </main>
 
-<%@include file="./index.components/footer.jsp" %>
+<%@include file="jsp/index.components/footer.jsp" %>
