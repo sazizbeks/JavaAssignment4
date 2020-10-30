@@ -8,6 +8,10 @@ public class Reader {
     public Reader() {
     }
 
+    public Reader(String iin) {
+        this.iin = iin;
+    }
+
     public Reader(String iin, String firstName, String lastName) {
         this.iin = iin;
         this.firstName = firstName;

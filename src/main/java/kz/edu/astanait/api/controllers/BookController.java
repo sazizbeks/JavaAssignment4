@@ -43,7 +43,7 @@ public class BookController implements IBookController {
     }
 
     @Override
-    public void delete(Book entity) {
+    public void delete(String id) {
 
     }
 

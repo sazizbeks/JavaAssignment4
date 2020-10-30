@@ -4,6 +4,7 @@ import kz.edu.astanait.DB;
 import kz.edu.astanait.api.controllers.interfaces.IReaderController;
 import kz.edu.astanait.models.Reader;
 
+import javax.ws.rs.BadRequestException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,7 +14,7 @@ import java.util.List;
 
 public class ReaderController implements IReaderController {
     @Override
-    public void add(Reader entity) {
+    public void add(Reader entity) throws BadRequestException {
         String sql = "INSERT INTO READERS(IIN, FNAME, LNAME) VALUES (?,?,?)";
         try {
             PreparedStatement ps = DB.getConnection().prepareStatement(sql);
@@ -22,12 +23,12 @@ public class ReaderController implements IReaderController {
             ps.setString(3, entity.getLastName());
             ps.execute();
         } catch (SQLException throwable) {
-            throwable.printStackTrace();
+            throw new BadRequestException("Reader with such IIN exists.");
         }
     }
 
     @Override
-    public void update(Reader entity) {
+    public void update(Reader entity) throws BadRequestException {
         StringBuilder sb = new StringBuilder("UPDATE READERS SET ");
 
         if (entity.getFirstName() != null) sb.append("FNAME=?,");
@@ -46,24 +47,24 @@ public class ReaderController implements IReaderController {
 
             preparedStatement.execute();
         } catch (SQLException throwable) {
-            throwable.printStackTrace();
+            throw new BadRequestException();
         }
     }
 
     @Override
-    public void delete(Reader entity) {
+    public void delete(String id) throws BadRequestException {
         String sql = "DELETE FROM readers WHERE IIN=?";
         try {
             PreparedStatement ps = DB.getConnection().prepareStatement(sql);
-            ps.setString(1, entity.getIin());
+            ps.setString(1, id);
             ps.execute();
         } catch (SQLException throwable) {
-            throwable.printStackTrace();
+            throw new BadRequestException("Incorrect IIN.");
         }
     }
 
     @Override
-    public List<Reader> getAll() {
+    public List<Reader> getAll() throws BadRequestException {
         List<Reader> readers = new ArrayList<>();
         try {
             Statement stmt = DB.getConnection().createStatement();
@@ -76,13 +77,13 @@ public class ReaderController implements IReaderController {
                 ));
             }
         } catch (SQLException throwable) {
-            throwable.printStackTrace();
+            throw new BadRequestException();
         }
         return readers;
     }
 
     @Override
-    public Reader getByIin(String iin) {
+    public Reader getByIin(String iin) throws BadRequestException {
         try {
             PreparedStatement ps = DB.getConnection().prepareStatement("SELECT * FROM READERS WHERE IIN=?");
             ps.setString(1, iin);
@@ -95,7 +96,7 @@ public class ReaderController implements IReaderController {
                 );
             }
         } catch (SQLException throwable) {
-            throwable.printStackTrace();
+            throw new BadRequestException();
         }
         return null;
     }
