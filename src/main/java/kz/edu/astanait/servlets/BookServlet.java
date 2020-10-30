@@ -1,5 +1,6 @@
 package kz.edu.astanait.servlets;
 
+import com.google.gson.Gson;
 import kz.edu.astanait.DB;
 
 import javax.servlet.ServletException;
@@ -9,33 +10,37 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @WebServlet(name = "BookServlet", urlPatterns = "/bookServlet")
 public class BookServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/plain");
+        Connection conn =  DB.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
 
         String isbn = request.getParameter("isbn");
-        String btnVal = request.getParameter("btnVal");
 
-        PrintWriter pw = response.getWriter();
+        try{
+            stmt = conn.prepareStatement("DELETE FROM books WHERE isbn=?");
+            stmt.setString(1,isbn);
+            boolean bool = stmt.execute();
 
-
-            String sql = "delete from books where isbn=?";
-
-            try {
-                PreparedStatement stmt = DB.getConnection().prepareStatement(sql);
-
-                stmt.setString(1,isbn);
-                stmt.execute();
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
+            if(bool){
+                response.setContentType("text/html");
+                String json = new Gson().toJson("deleted");
+                response.getWriter().write(json);
+            }else{
+                response.setContentType("text/html");
+                String json = new Gson().toJson("error");
+                response.getWriter().write(json);
             }
-
-        pw.println("Book deleted successfully!");
-
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
 
     }
 

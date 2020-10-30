@@ -27,7 +27,6 @@ VALUES
 ('020429550471', 'Ayan', 'Sultan');
 
 INSERT INTO books(ISBN, NAME, AUTHOR, COUNT_OF_COPY, IMG_URL)
-VALUES
-('978-5-367-00490-8', 'A Brief History of Time Paperback', 'Stephen Hawking', 10, ),
-('0-670-81302-8','It','Stephen King', 20, ),
-('978-5496025416','Grokaem algoritmy. Illyustrirovannoe posobie dlya programmistov i lyubopytstvuyuschih', 'Aditya Bhargava', 50, );
+VALUES ('978-5-367-00490-8', 'A Brief History of Time Paperback', 'Stephen Hawking', 10,'https://images-na.ssl-images-amazon.com/images/I/51+GySc8ExL._SY344_BO1,204,203,200_.jpg' ),
+('0-670-81302-8','It','Stephen King', 20,'https://images-na.ssl-images-amazon.com/images/I/41MnBgdydDL._SX323_BO1,204,203,200_.jpg' ),
+('978-5496025416','Grokaem algoritmy', 'Aditya Bhargava', 50, 'https://cdn.f.kz/prod/815/814376_550.jpg')
