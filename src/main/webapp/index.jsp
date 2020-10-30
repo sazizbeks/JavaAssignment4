@@ -1,5 +1,5 @@
 <%@include file="jsp/index.components/header.jsp" %>
-<script><%@include file="js/bookList.js"%></script>
+<script><%@include file="js/bookDelete.js"%></script>
 <main class="main">
 
     <div class="grid">
