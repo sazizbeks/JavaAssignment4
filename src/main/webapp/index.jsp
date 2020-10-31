@@ -1,6 +1,10 @@
 <%@include file="jsp/index.components/header.jsp" %>
 <%@include file="js/bootstrap.js"%>
 <script><%@include file="js/bookDelete.js"%></script>
+
+<s:query dataSource = "${snapshot}" var = "result">
+    SELECT * FROM books;
+</s:query>
 <main class="main">
 
     <div class="grid">

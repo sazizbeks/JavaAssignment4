@@ -1,5 +1,6 @@
 package kz.edu.astanait.servlets;
 
+import kz.edu.astanait.apiClients.ReaderClient;
 import kz.edu.astanait.models.Reader;
 
 import javax.servlet.ServletException;
@@ -15,26 +16,31 @@ import java.io.IOException;
 
 @WebServlet(name = "Servlet",urlPatterns = "/readerServ")
 public class ReaderServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    ReaderClient rc = new ReaderClient();
 
-        String REST_URI = "http://localhost:8080/Assignment4_war/api/reader/";
-        WebTarget target = ClientBuilder.newBuilder().build().target(REST_URI);
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String iin = request.getParameter("iin");
         String firstName = request.getParameter("fname");
         String lastName = request.getParameter("lname");
+        String btnVal = request.getParameter("btn");
 
         Reader reader = new Reader(iin,firstName,lastName);
 
-        if(request.getParameter("btn").equals("Add")){
-            WebTarget resource = target.path("add");
-            resource.request(MediaType.APPLICATION_JSON).put(Entity.json(reader)).readEntity(Reader.class);
-            doGet(request,response);
+        switch (btnVal){
+            case ("Add"):
+                rc.addReader(reader);
+                break;
+            case ("delete"):
+                rc.deleteReader(reader.getIin());
+                break;
+            case("update"):
+                rc.updateReader(reader);
+                break;
+            case ("search"):
+                rc.getReader(iin);
+                break;
         }
-
-
-
-//        System.out.println(resource.request(MediaType.APPLICATION_JSON).get(Reader.class));
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

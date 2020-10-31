@@ -20,8 +20,8 @@
         <div class="agileits-top">
             <form action="<c:url value="/readerServ"/>" method="post">
                 <input class="text" type="text" name="iin" id="IIN" placeholder="IIN" required><br>
-                <input class="text" type="text" name="Name" placeholder="Name" required><br>
-                <input class="text" type="text" name="Surname" placeholder="Surname" required><br>
+                <input class="text" type="text" name="fname" placeholder="Name" required><br>
+                <input class="text" type="text" name="lname" placeholder="Surname" required><br>
                 <span id="badResult" class="text-danger"></span>
                 <span class="text-success" id="goodResult"></span>
                 <input name="btn" type="submit" value="Add" id="submit">
