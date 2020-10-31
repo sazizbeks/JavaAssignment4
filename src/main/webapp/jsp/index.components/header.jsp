@@ -30,9 +30,9 @@
         <nav class="navigation">
             <ul class="navigation__list navigation__list--inline">
                 <li class="navigation__item"><a href="<c:url value="/index.jsp"/>" class="is-active">Home</a></li>
-                <li class="navigation__item"><a href="<c:url value="jsp/register.jsp"/>" class="is-active">Register</a></li>
-                <li class="navigation__item"><a href="<c:url value="jsp/addBook.jsp"/>" class="is-active">Add book</a></li>
-                <li class="navigation__item"><a href="<c:url value="jsp/readerList.jsp"/>" class="is-active">Readers</a></li>
+                <li class="navigation__item"><a href="<c:url value="/jsp/register.jsp"/>" class="is-active">Register</a></li>
+                <li class="navigation__item"><a href="<c:url value="/jsp/addBook.jsp"/>" class="is-active">Add book</a></li>
+                <li class="navigation__item"><a href="<c:url value="/jsp/readerList.jsp"/>" class="is-active">Readers</a></li>
             </ul>
         </nav>
     </div>

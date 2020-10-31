@@ -31,16 +31,17 @@ public class ReaderServlet extends HttpServlet {
             case ("Add"):
                 rc.addReader(reader);
                 break;
+            case("Edit"):
+                rc.updateReader(reader);
+                break;
             case ("delete"):
                 rc.deleteReader(reader.getIin());
-                break;
-            case("update"):
-                rc.updateReader(reader);
                 break;
             case ("search"):
                 rc.getReader(iin);
                 break;
         }
+        doGet(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

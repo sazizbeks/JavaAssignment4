@@ -20,7 +20,9 @@
                 </ul>
                 <br>
                 <div class="text-center">
-                    <button class="edit btn btn-outline-info" value="edit">Edit</button>
+                    <a style="text-decoration: none" href="<c:url value="updateReader.jsp"/>">
+                        <button class="edit btn btn-outline-info" value="edit">Edit</button>
+                    </a>
                     <button class="delete btn btn-outline-info" value="delete">Delete</button>
                 </div>
             </div>
