@@ -5,15 +5,25 @@ public class Book {
     private String name;
     private String author;
     private Integer count_of_copy;
+    private String url;
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
     public Book() {
     }
 
-    public Book(String ISBN, String name, String author, int count_of_copy) {
+    public Book(String ISBN, String name, String author, int count_of_copy,String url) {
         this.ISBN = ISBN;
         this.name = name;
         this.author = author;
         this.count_of_copy = count_of_copy;
+        this.url = url;
     }
 
     public String getISBN() {
