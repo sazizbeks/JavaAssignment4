@@ -1,7 +1,8 @@
 $(document).ready(function (){
     $('.delete').click(function (){
         let xhttp = new XMLHttpRequest();
-        var isbn = $(this).attr('id');
+        var iin = $(this).attr('id');
+        var btnValue = $(this).val();
 
 
         xhttp.onreadystatechange = function (){
@@ -9,11 +10,8 @@ $(document).ready(function (){
                 location.reload();
             }
         };
-
-        let toServlet = isbn.toJSONString;
-        xhttp.open("POST", "${pageContext.request.contextPath}/bookServlet?isbn=" + isbn, true);
+        xhttp.open("POST", "${pageContext.request.contextPath}/readerServ?iin=" + iin + "&btn=" + btnValue , true);
         xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhttp.send(toServlet);
-
+        xhttp.send();
     });
 });

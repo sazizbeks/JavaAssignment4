@@ -27,21 +27,26 @@ public class ReaderServlet extends HttpServlet {
 
         Reader reader = new Reader(iin,firstName,lastName);
 
+
         switch (btnVal){
             case ("Add"):
                 rc.addReader(reader);
+                doGet(request,response);
                 break;
             case("Edit"):
                 rc.updateReader(reader);
+                doGet(request,response);
                 break;
             case ("delete"):
                 rc.deleteReader(reader.getIin());
-                break;
+                response.sendRedirect(request.getHeader("Referer"));
+                return;
             case ("search"):
                 rc.getReader(iin);
+                doGet(request,response);
                 break;
         }
-        doGet(request,response);
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

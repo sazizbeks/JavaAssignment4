@@ -29,6 +29,8 @@
 
         <div class="container">
             <h1 class="text-center">Our books</h1>
+
+
             <c:forEach var="row" items="${result.rows}">
                 <div class="mb-4 card m-0 p-1 col-md-12">
                     <div class="row container-fluid">

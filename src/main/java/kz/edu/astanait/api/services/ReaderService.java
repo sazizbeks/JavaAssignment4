@@ -96,6 +96,4 @@ public class ReaderService {
                 .ok("Reader deleted successfully.")
                 .build();
     }
-
-
 }

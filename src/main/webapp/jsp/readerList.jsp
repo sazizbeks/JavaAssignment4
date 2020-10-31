@@ -1,5 +1,6 @@
 <%@include file="index.components/header.jsp" %>
 <%@include file="/js/bootstrap.js"%>
+<script><%@include file="/js/readerDelete.js"%></script>
 
 <s:query dataSource = "${snapshot}" var = "result">
     SELECT * from readers;
@@ -23,7 +24,9 @@
                     <a style="text-decoration: none" href="<c:url value="updateReader.jsp"/>">
                         <button class="edit btn btn-outline-info" value="edit">Edit</button>
                     </a>
-                    <button class="delete btn btn-outline-info" value="delete">Delete</button>
+                        <button class="delete btn btn-outline-info" id="${row.iin}" value="delete">Delete</button>
+
+
                 </div>
             </div>
             <hr>
