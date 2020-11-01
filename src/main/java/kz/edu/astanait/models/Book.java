@@ -7,15 +7,6 @@ public class Book {
     private Integer count_of_copy;
     private String url;
 
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-
     public Book(String ISBN, String name, String author,  Integer count_of_copy, String url) {
         this.ISBN = ISBN;
         this.name = name;
@@ -54,6 +45,14 @@ public class Book {
 
     public void setCount_of_copy(Integer count_of_copy) {
         this.count_of_copy = count_of_copy;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     @Override
