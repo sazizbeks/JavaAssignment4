@@ -33,6 +33,7 @@
                 <li class="navigation__item"><a href="<c:url value="/jsp/register.jsp"/>" class="is-active">Register</a></li>
                 <li class="navigation__item"><a href="<c:url value="/jsp/addBook.jsp"/>" class="is-active">Add book</a></li>
                 <li class="navigation__item"><a href="<c:url value="/jsp/readerList.jsp"/>" class="is-active">Readers</a></li>
+                <li class="navigation__item"><a href="<c:url value="/logout"/>" class="is-active">Logout</a></li>
             </ul>
         </nav>
     </div>
