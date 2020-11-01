@@ -18,7 +18,6 @@ public class BookServlet extends HttpServlet {
         Connection conn =  DB.getConnection();
         PreparedStatement stmt = null;
 
-
         String isbn = request.getParameter("isbn");
 
         try{

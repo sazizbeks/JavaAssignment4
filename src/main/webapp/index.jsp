@@ -67,9 +67,10 @@
                                 </ul>
                                 <br>
                                 <div class="row text-center">
-                                    <a class="col-md-6" style="text-decoration: none" href="<c:url value="./jsp/updateBook.jsp"/>">
-                                        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Update</button>
-                                    </a>
+                                    <form class="col-md-6" action="./jsp/updateBook.jsp" method="post">
+                                        <input type="hidden" name="isbn" value="${row.isbn}">
+                                        <button type="submit" class="btn btn-lg btn-block btn-outline-primary">Update</button>
+                                    </form>
                                         <button id="${row.isbn}" type="button" class="delete col-md-6 btn btn-lg btn-block btn-outline-primary" value="delete">Delete</button>
                                 </div>
                             </div>

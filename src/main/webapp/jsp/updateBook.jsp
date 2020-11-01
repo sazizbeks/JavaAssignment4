@@ -17,12 +17,20 @@
     <h1>Astana IT University Library</h1>
     <div class="main-agileinfo">
         <div class="agileits-top">
-            <form action="<c:url value=""/>" method="post">
-                <input class="text" type="text" name="ISBN" id="ISBN" placeholder="ISBN" required><br>
-                <input class="text" type="text" name="Name" placeholder="Name" required><br>
-                <input class="text" type="text" name="Author" placeholder="Author" required><br>
-                <input class="text" type="text" name="CountOfCopy" placeholder="Count of copy" required><br>
-                <input class="text" type="text" name="image" placeholder="Image" required><br>
+            <form action="<c:url value='/updateBook'/>" method="post">
+                <label for="name" style="color: white">Name</label>
+                <input id="name" class="text" type="text" name="Name" placeholder="Name"><br>
+
+                <label for="author" style="color: white">Author</label>
+                <input id="author" class="text" type="text" name="Author" placeholder="Author"><br>
+
+                <label for="countOfCopy" style="color: white">Count of copy</label>
+                <input id="countOfCopy" class="text" type="text" name="CountOfCopy" placeholder="Count of copy"><br>
+
+                <label for="imageURL" style="color: white">Image URL</label>
+                <input id="imageURL" class="text" type="text" name="image" placeholder="Image"><br>
+
+                <input type="hidden" name="ISBN" id="ISBN" value="<%=request.getParameter("isbn")%>">
                 <input name="btn" type="submit" value="Edit" id="submit">
             </form>
         </div>
