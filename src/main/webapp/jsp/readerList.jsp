@@ -1,9 +1,19 @@
 <%@include file="index.components/header.jsp" %>
 <%@include file="/js/bootstrap.js"%>
 <script><%@include file="/js/readerDelete.js"%></script>
+<script><%@include file="/js/readersBookDelete.js"%></script>
 
-<s:query dataSource = "${snapshot}" var = "result">
-    SELECT * from readers;
+<s:query dataSource = "${snapshot}" var = "readers">
+    SELECT * FROM READERS;
+</s:query>
+
+<s:query dataSource = "${snapshot}" var = "readersBooks">
+
+    SELECT distinct fname, ISBN, NAME, AUTHOR
+    FROM READERS R
+    INNER JOIN readers_books RB ON RB.READER_IIN=R.IIN
+    INNER JOIN BOOKS B ON RB.BOOK_ISBN=B.ISBN;
+
 </s:query>
 
 <main class="main">
@@ -12,26 +22,17 @@
 
         <h1 class="text-center">Our Readers</h1>
 
-        <c:forEach var="row" items="${result.rows}">
-            <div style="border-right: black 2px solid; border-left: black 2px solid;">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">${row.iin}</li>
-                    <li class="list-group-item">${row.fname}</li>
-                    <li class="list-group-item">${row.lname}</li>
-                </ul>
-                <br>
-                <div class="text-center">
-                    <a style="text-decoration: none" href="<c:url value="updateReader.jsp"/>">
-                        <button class="edit btn btn-outline-info" value="edit">Edit</button>
-                    </a>
-                        <button class="delete btn btn-outline-info" id="${row.iin}" value="delete">Delete</button>
-
-
-                </div>
-            </div>
-            <hr>
+        <c:forEach var="row" items="${readersBooks.rows}">
+        <div class="text-center">
+            <ul class="list-group">
+                <li class="list-group-item">${row.iin}</li>
+                <li class="list-group-item">${row.fname}</li>
+                <li class="list-group-item">${row.ISBN}</li>
+                <li class="list-group-item">${row.NAME}</li>
+                <li class="list-group-item">${row.AUTHOR}</li>
+            </ul>
+        </div>
         </c:forEach>
-
     </div>
 
 

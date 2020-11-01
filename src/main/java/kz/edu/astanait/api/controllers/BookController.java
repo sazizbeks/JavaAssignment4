@@ -27,7 +27,7 @@ public class BookController implements IBookController {
             stmt.setString(2,entity.getName());
             stmt.setString(3,entity.getAuthor());
             stmt.setInt(4,entity.getCount_of_copy());
-            stmt.setString(5,entity.getAuthor());
+            stmt.setString(5,entity.getUrl());
 
             stmt.execute();
         } catch (SQLException throwable) {

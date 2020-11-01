@@ -100,4 +100,18 @@ public class ReaderController implements IReaderController {
         }
         return null;
     }
+
+    @Override
+    public void deleteReadersBook(String iin, String isbn) {
+        String sql = "DELETE FROM readers_books WHERE IIN=? and ISBN=?";
+        try {
+            PreparedStatement ps = DB.getConnection().prepareStatement(sql);
+            ps.setString(1, iin);
+            ps.setString(2,isbn);
+
+            ps.execute();
+        } catch (SQLException throwable) {
+            throw new BadRequestException(throwable);
+        }
+    }
 }

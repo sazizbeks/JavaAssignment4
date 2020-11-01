@@ -50,4 +50,8 @@ public class ReaderClient {
     public void updateReader(Reader reader){
         getWebTarget().request().put(Entity.entity(reader, MediaType.APPLICATION_JSON), Response.class);
     }
+
+    public void deleteReadersBook(String iin,String isbn) {
+        getWebTarget().path(iin+"_"+isbn).request().delete();
+    }
 }

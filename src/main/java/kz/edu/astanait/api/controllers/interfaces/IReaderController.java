@@ -6,4 +6,5 @@ import javax.ws.rs.BadRequestException;
 
 public interface IReaderController extends CRUD<Reader>{
     Reader getByIin(String iin) throws BadRequestException;
+    void deleteReadersBook(String iin,String isbn);
 }

@@ -96,4 +96,21 @@ public class ReaderService {
                 .ok("Reader deleted successfully.")
                 .build();
     }
+
+    @DELETE
+    @Path("/{iin}_{isbn}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response deleteReader(@PathParam("iin") String iin, @PathParam("isbn") String isbn) {
+        try{
+            readerController.deleteReadersBook(iin,isbn);
+        } catch (BadRequestException e) {
+            return Response
+                    .notModified()
+                    .entity("Reader's book hasn't deleted.")
+                    .build();
+        }
+        return Response
+                .ok("Reader's book deleted successfully.")
+                .build();
+    }
 }
