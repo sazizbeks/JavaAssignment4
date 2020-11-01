@@ -41,6 +41,7 @@ public class IINServlet extends HttpServlet {
                 String json = new Gson().toJson("available");
                 response.getWriter().write(json);
             }
+
         } catch (SQLException throwable) {
             throwable.printStackTrace();
         }
