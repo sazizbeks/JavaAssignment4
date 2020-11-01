@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Add book</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <style>
@@ -29,6 +29,7 @@
                 <input class="text" type="text" name="Name" placeholder="Name" required><br>
                 <input class="text" type="text" name="Author" placeholder="Author" required><br>
                 <input class="text" type="text" name="CountOfCopy" placeholder="Count of copy" required><br>
+                <input class="text" type="text" name="image" placeholder="Image" required><br>
                 <span id="badResult" class="text-danger"></span>
                 <span class="text-success" id="goodResult"></span>
                 <input type="submit" value="Submit" id="submit">

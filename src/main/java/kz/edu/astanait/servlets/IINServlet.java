@@ -45,8 +45,4 @@ public class IINServlet extends HttpServlet {
             throwable.printStackTrace();
         }
     }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
 }

@@ -3,26 +3,15 @@ package kz.edu.astanait.api.services;
 import kz.edu.astanait.api.controllers.BookController;
 import kz.edu.astanait.api.controllers.interfaces.IBookController;
 import kz.edu.astanait.models.Book;
-import kz.edu.astanait.models.Reader;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
 @Path("/book")
 public class BookService {
     private final IBookController bookController = new BookController();
-    /*
-        TODO
-         delete getClichedMessage() method
-         add other methods like in ReaderService
-     */
-
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)

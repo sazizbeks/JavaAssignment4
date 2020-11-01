@@ -67,7 +67,7 @@
                                 </ul>
                                 <br>
                                 <div class="row text-center">
-                                    <a class="col-md-6" style="text-decoration: none" href="<c:url value=""/>">
+                                    <a class="col-md-6" style="text-decoration: none" href="<c:url value="./jsp/updateBook.jsp"/>">
                                         <button type="button" class="btn btn-lg btn-block btn-outline-primary">Update</button>
                                     </a>
                                         <button id="${row.isbn}" type="button" class="delete col-md-6 btn btn-lg btn-block btn-outline-primary" value="delete">Delete</button>
