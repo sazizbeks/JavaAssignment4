@@ -4,7 +4,7 @@
 
 <s:setDataSource var = "snapshot" driver = "com.mysql.cj.jdbc.Driver"
                  url = "jdbc:mysql://localhost:3306/assignment_week_8?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
-                 user = "ibragim"  password = "1234"/>
+                 user = "root"  password = ""/>
 
 <html>
 <head>
@@ -35,6 +35,7 @@
                 <li class="navigation__item"><a href="<c:url value="/jsp/addBook.jsp"/>" class="is-active">Add book</a></li>
                 <li class="navigation__item"><a href="<c:url value="/jsp/readerList.jsp"/>" class="is-active">Readers</a></li>
                 <li class="navigation__item"><a href="<c:url value="/jsp/search.jsp"/>" class="is-active">Search Book</a></li>
+                <li class="navigation__item"><a href="<c:url value="/logout"/>" class="is-active">LogOut</a></li>
 
             </ul>
         </nav>
