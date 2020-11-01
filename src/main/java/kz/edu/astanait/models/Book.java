@@ -15,8 +15,6 @@ public class Book {
         this.url = url;
     }
 
-    public Book() {
-    }
 
     public Book(String ISBN, String name, String author, int count_of_copy,String url) {
         this.ISBN = ISBN;
