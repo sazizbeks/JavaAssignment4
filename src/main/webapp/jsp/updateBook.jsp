@@ -31,7 +31,7 @@
                 <input id="imageURL" class="text" type="text" name="image" placeholder="Image"><br>
 
                 <input type="hidden" name="ISBN" id="ISBN" value="<%=request.getParameter("isbn")%>">
-                <input name="btn" type="submit" value="Edit" id="submit">
+                <input  name="btn" type="submit" value="Edit" id="submit">
             </form>
         </div>
     </div>

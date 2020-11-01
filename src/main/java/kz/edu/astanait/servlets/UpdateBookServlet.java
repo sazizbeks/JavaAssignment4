@@ -37,6 +37,6 @@ public class UpdateBookServlet extends HttpServlet {
             image = req.getParameter("image");
 
         client.updateBook(new Book(isbn, name, author, countOfCopy, image));
-        resp.sendRedirect(getServletContext().getContextPath() + "/start");
+        resp.sendRedirect(getServletContext().getContextPath() +  "/start");
     }
 }

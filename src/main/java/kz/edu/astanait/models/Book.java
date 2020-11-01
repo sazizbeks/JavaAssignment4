@@ -16,7 +16,7 @@ public class Book {
     }
 
 
-    public Book(String ISBN, String name, String author, Integer count_of_copy, String url) {
+    public Book(String ISBN, String name, String author,  Integer count_of_copy, String url) {
         this.ISBN = ISBN;
         this.name = name;
         this.author = author;
