@@ -15,9 +15,9 @@ public class DB {
         if(connection==null){
             try {
                 connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/assignment_week_8?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
-                        "root","");
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
+                        "ibragim","1234");
+            } catch (SQLException throwable) {
+                throwable.printStackTrace();
             }
         }
         return connection;
