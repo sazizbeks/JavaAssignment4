@@ -1,6 +1,6 @@
-<%@include file="jsp/index.components/header.jsp" %>
-<%@include file="js/bootstrap.js"%>
-<script><%@include file="js/bookDelete.js"%></script>
+<%@include file="/jsp/index.components/header.jsp" %>
+<%@include file="/js/bootstrap.js"%>
+<script><%@include file="/js/bookDelete.js"%></script>
 
 <s:query dataSource = "${snapshot}" var = "result">
     SELECT * FROM books;
@@ -85,4 +85,4 @@
 
 
 </main>
-<%@include file="jsp/index.components/footer.jsp" %>
+<%@include file="/jsp/index.components/footer.jsp" %>

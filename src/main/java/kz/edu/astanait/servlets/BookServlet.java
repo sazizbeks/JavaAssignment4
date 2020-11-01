@@ -17,7 +17,6 @@ public class BookServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Connection conn =  DB.getConnection();
         PreparedStatement stmt = null;
-
         String isbn = request.getParameter("isbn");
 
         try{
