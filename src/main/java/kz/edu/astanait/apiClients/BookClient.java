@@ -1,11 +1,8 @@
 package kz.edu.astanait.apiClients;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import kz.edu.astanait.models.Book;
-import kz.edu.astanait.models.Reader;
 import org.glassfish.jersey.client.ClientConfig;
-import org.glassfish.jersey.client.ClientProperties;
 
 import javax.ws.rs.client.*;
 import javax.ws.rs.core.MediaType;
