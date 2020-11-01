@@ -1,11 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core_1_1" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: user
-  Date: 26.10.2020
-  Time: 20:27
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -24,15 +17,15 @@
     <h1>Astana IT University Library</h1>
     <div class="main-agileinfo">
         <div class="agileits-top">
-            <form action="<c:url value="/addBook"/>" method="post">
-                <input class="text" type="text" id="ISBN" placeholder="ISBN" required><br>
-                <input class="text" type="text" name="Name" placeholder="Name" required><br>
-                <input class="text" type="text" name="Author" placeholder="Author" required><br>
-                <input class="text" type="text" name="CountOfCopy" placeholder="Count of copy" required><br>
+            <form action="<c:url value="/bookServlet"/>" method="post">
+                <input class="text" type="text" name="isbn" id="ISBN" placeholder="ISBN" required><br>
+                <input class="text" type="text" name="name" placeholder="Name" required><br>
+                <input class="text" type="text" name="author" placeholder="Author" required><br>
+                <input class="text" type="text" name="coc" placeholder="Count of copy" required><br>
                 <input class="text" type="text" name="image" placeholder="Image" required><br>
                 <span id="badResult" class="text-danger"></span>
                 <span class="text-success" id="goodResult"></span>
-                <input type="submit" value="Submit" id="submit">
+                <input name="btn" type="submit" value="Add" id="submit">
             </form>
         </div>
     </div>
