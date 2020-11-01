@@ -3,7 +3,6 @@ package kz.edu.astanait.api.controllers;
 import kz.edu.astanait.DB;
 import kz.edu.astanait.api.controllers.interfaces.IBookController;
 import kz.edu.astanait.models.Book;
-import kz.edu.astanait.models.Reader;
 
 import javax.ws.rs.BadRequestException;
 import java.sql.PreparedStatement;
@@ -14,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookController implements IBookController {
-    // TODO implement add, delete, getAll
 
     @Override
     public void add(Book entity) {
