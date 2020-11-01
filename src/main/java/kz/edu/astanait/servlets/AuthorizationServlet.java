@@ -13,7 +13,7 @@ public class AuthorizationServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        if(!username.equals("AdminLibrarian") || !password.equals("Librarian123")){
+        if(!username.equals("AdminLibrarian") || !password.equals("Admin123")){
             Cookie errorCookie = new Cookie("errorAuthorize", "Incorrect_username_or_password!");
             errorCookie.setMaxAge(5);
             response.addCookie(errorCookie);
@@ -25,6 +25,6 @@ public class AuthorizationServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.setAttribute("librarian", librarian);
         session.setMaxInactiveInterval(60*60*5);
-        response.sendRedirect(getServletContext().getContextPath()+"/index.jsp");
+        response.sendRedirect(getServletContext().getContextPath()+"/start");
     }
 }
